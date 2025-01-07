@@ -1,0 +1,49 @@
+body {
+    max-width: 1200px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: black;
+    color: white;
+}
+
+.column {
+    position: relative;
+    width: 200px; /* adjust as needed */
+    height: 200px; /* adjust as needed */
+    overflow: hidden;
+}
+
+.column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card {
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    text-align: center;
+}
+
+.column:hover .card {
+    display: flex;
+}
