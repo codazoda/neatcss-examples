@@ -5,6 +5,9 @@
 a {
     text-decoration: none;
 }
+h1 {
+    margin-bottom: 2em;
+}
 
 h2 {
     text-align: center;
@@ -24,22 +27,24 @@ h2::after {
     height: 0.5em;
 }
 
+.links {
+    margin-bottom: 2em;
+}
+
 .item {
     float: left;
     width: 50%;
     margin-bottom: 2em;
+    padding: 0.5em;
 }
 
 .item p {
     margin-top: 0.5em;
 }
 
-/*
-.item:hover {
-    border: 1px solid var(--medium);
-    border-radius: 1em;
+.item img {
+    margin-bottom: 1em;
 }
-*/
 
 .desc {
     font-style: italic;
@@ -49,6 +54,16 @@ h2::after {
 
 .buy {
     text-align: center;
+}
+
+.pipe {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    color: var(--medium);
+}
+
+img.product {
+    margin-bottom: 3em;
 }
 
 @media only screen and (min-width: 600px) {
