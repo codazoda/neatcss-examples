@@ -1,45 +1,28 @@
-* {
-    box-sizing: border-box;
+:root {
+    color-scheme: dark light;
+    --light: #fff;
+    --dark: #404040;
 }
 
-:root {
-    color-scheme: light dark;
-    --light: #fff;
-    --lesslight: #efefef;
-    --dark: #404040;
-    --moredark: #000;
-    --link: royalblue;
-    border-top: 5px solid var(--dark);
-    line-height: 1.5em;
-    font-family: system-ui, sans-serif;
-    font-size: 16px;
+* {
+    box-sizing: border-box;
     color: var(--dark);
 }
 
-h1 {
-    line-height: 1em;
+html {
+    border-style: solid;
+    border-width: 5px 0 0 0;
+    border-color: var(--dark);
 }
 
-button, input {
-    font-size: 1em; /* Override browser default font shrinking*/
+html, button, input {
+    font-family: sans-serif;
 }
 
 input {
-    border: 1px solid var(--dark);
-    background-color: var(--lesslight);
-    border-radius: .25em;
-    padding: .5em;
-}
-
-pre {
-    background-color: var(--lesslight);
-    margin: 0.5em 0 0.5em 0;
-    padding: 0.5em;
-    overflow: auto;
-}
-
-code {
-    background-color: var(--lesslight);
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 5px; 
 }
 
 body {
@@ -47,44 +30,41 @@ body {
     margin: 0;
     max-width: 800px;
     padding: 0 20px 20px 20px;
+    line-height: 1.4em;
     margin-left: auto;
     margin-right: auto;
 }
 
-a {
-    outline: none;
-    color: var(--dark);
-}
-
-a:hover {
-    text-decoration-color: var(--link);
+p {
+    margin-bottom: 10px;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+}
+
+pre {
+    overflow: auto;
 }
 
 button, .button, input[type=submit] {
     display: inline-block;
     background-color: var(--dark);
     color: var(--light);
+    font-size: 1em;
     text-align: center;
-    padding: .5em;
-    border-radius: .25em;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
     text-decoration: none;
     border: none;
+    line-height: normal;
     cursor: pointer;
 }
 
-button:hover, .button:hover, input[type=submit]:hover {
-    color: var(--lesslight);
-    background-color: var(--moredark);
-}
 
-/* Add a margin between side-by-side buttons */
-button + button, .button + .button, input[type=submit] + input[type=submit] {
-    margin-left: 1em;
+button:last-child, .button:last-child {
+    margin-right: 0;
 }
 
 .center {
@@ -110,8 +90,8 @@ button + button, .button + .button, input[type=submit] + input[type=submit] {
 
 
 /* Desktop sizes */
-@media (min-width: 600px) {
-    ol.twocol {
+@media only screen and (min-width: 600px) {
+    ol {
         column-count: 2;
     }
     
@@ -122,22 +102,34 @@ button + button, .button + .button, input[type=submit] + input[type=submit] {
         width: 100%;
     }
 
-    /* Make everything in a row a column */
-    .row > * {
+    .row .column {
         display: block;
         flex: 1 1 auto;
         max-width: 100%;
         width: 100%;
     }
 
-    .row > *:not(:last-child) {
+    .row .column:not(:last-child) {
         margin-right: 10px;
     }
 }
 
-/* Printing */
-@media print {
-    .home {
-        display: none;
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+    * {
+        color: var(--light);
+    }
+
+    html {
+        border-color: var(--light);
+    }
+
+    body {
+        background-color: var(--dark);
+    }
+
+    button, .button, .home, input {
+        background-color: var(--light);
+        color: var(--dark);
     }
 }

@@ -1,49 +1,62 @@
-body {
-    max-width: 1200px;
+:root {
+    --medium: rgb(200, 200, 200);
+}
+
+a {
+    text-decoration: none;
 }
 
 h2 {
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
 }
 
-.row {
-    margin-bottom: 40px;
+h2::after {
+    content: "";
+    display: block;
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid var(--medium);
+    height: 0.5em;
 }
 
-.card {
-    background-color: black;
-    color: white;
+.item {
+    float: left;
+    width: 50%;
+    margin-bottom: 2em;
 }
 
-.column {
-    position: relative;
-    width: 200px; /* adjust as needed */
-    height: 200px; /* adjust as needed */
-    overflow: hidden;
+.item p {
+    margin-top: 0.5em;
 }
 
-.column img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/*
+.item:hover {
+    border: 1px solid var(--medium);
+    border-radius: 1em;
 }
+*/
 
-.card {
-    position: absolute;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
+.desc {
+    font-style: italic;
+    font-size: 0.9em;
     text-align: center;
 }
 
-.column:hover .card {
-    display: flex;
+.buy {
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .item {
+        float: left;
+        display: inline-block;
+        width: 25%;
+    }
+
 }
