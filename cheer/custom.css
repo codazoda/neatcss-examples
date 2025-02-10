@@ -20,7 +20,7 @@ h2 {
 h2::after {
     content: "";
     display: block;
-    width: 10%;
+    width: 1em;
     margin-left: auto;
     margin-right: auto;
     border-bottom: 1px solid var(--medium);
@@ -60,6 +60,14 @@ h2::after {
     margin-left: 0.5em;
     margin-right: 0.5em;
     color: var(--medium);
+}
+
+.price {
+    margin-top: 0.5em;
+}
+
+.name {
+    font-weight: bold;
 }
 
 img.product {
