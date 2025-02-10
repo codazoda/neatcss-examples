@@ -74,4 +74,21 @@ img.product {
         width: 25%;
     }
 
+    img.product {
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+    }
+
+    .button a {
+        text-align: center;
+    }
+
 }
